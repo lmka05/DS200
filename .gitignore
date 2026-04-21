@@ -1,0 +1,12 @@
+# Virtual environments
+venv/
+.venv/
+**/venv/
+**/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+#Data
+Lab3/data/
