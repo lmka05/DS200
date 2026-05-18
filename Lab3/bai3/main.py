@@ -1,4 +1,4 @@
-from pyspark import SparkContext,
+from pyspark import SparkContext
 
 
 sc = SparkContext.getOrCreate()
