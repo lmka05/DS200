@@ -44,18 +44,3 @@ result_2 = order_items_with_name_and_score.groupBy("Product_Category_Name").agg(
 ).orderBy(F.col("Average_Review_Score").desc())
 
 result_2.show(truncate=False)
-raise()
-
-order_items_date = order_items_date.filter(F.year(F.col("Order_purchase_timestamp")) == 2024)
-order_items_date.show(truncate=False)
-order_items_result = order_items_date.join(
-    products.select("Product_ID", "Product_Category_Name"),
-    on = "Product_ID",
-    how = "inner"
-)
-
-order_items_result = order_items_result.groupBy("Product_Category_Name").agg(
-    F.sum("Total_Price").alias("Total_Sales")
-).orderBy(F.col("Total_Sales").desc())
-
-order_items_result.show(truncate=False)    
